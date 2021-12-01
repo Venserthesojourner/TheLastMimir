@@ -1,0 +1,65 @@
+<template name="App_home">
+    {{#if currentUser}}
+        {{> formTutores}}
+        {{> tutoresTendencia}}
+    {{ else}}
+        <div class="container-fluid stars">
+            <div class="twinkling">
+                <div class="clouds">
+                    {{> home_welcome}}
+                    {{> home_seccion}}
+                </div>
+            </div>
+        </div>
+    {{/if}}
+</template>
+
+<template name="formTutores">
+    <div class="container formBusquedaTutor">
+        <form class="row">
+            <div class="row">
+                <div class="col col-12 mb-3">
+                    <label for="busquedaTutor" class="form-label"> Ingrese lo que desee buscar: </label>
+                    <input type="text" class="form-control" id="busquedaTutor" name="busquedaTutor" required
+                           placeholder="Ej: Matematicas">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="materia">
+                    <label class="form-check-label" for="materia"> Materia </label>
+                </div>
+                <div class="col form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="distancia">
+                    <label class="form-check-label" for="distancia"> Distancia </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="reset" class="btn btn-secondary mb-3"> borrar &#128683;</button>
+                <button type="submit" class="btn btn-primary mb-3"> buscar &#128270;</button>
+            </div>
+        </form>
+    </div>
+</template>
+
+<template name="tutoresTendencia">
+    <div class="container tendencias">
+        <div>
+            <h1> Tutor del dia  </h1>
+            <div class="row">
+                <div class="col-12">
+                    <h2> Nombre y apellido </h2>
+                </div>
+                <div class="col-6">
+                    <p>Puntaje:</p>
+                </div>
+                <div class="col-6">
+                    <p> Materias que enseña </p>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-secondary mb-3"> enviar solicitud &#128640;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
